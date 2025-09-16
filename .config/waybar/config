@@ -1,0 +1,152 @@
+{
+    "layer": "top",
+    "icp": true,
+    "mode": "hide",
+    "position": "top",
+    "reload_style_on_change": true,
+    "modules-left": ["custom/notification", "tray", "clock"],
+    "modules-center": ["hyprland/workspaces"],
+    "modules-right": ["group/expand","custom/vpn","network","pulseaudio", "battery"],
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "active": "",
+            "default": "",
+            "empty": ""
+        },
+        "persistent-workspaces": {
+            "*": [ 1,2,3,4,5 ]
+        }
+    },
+    "custom/notification": {
+        "tooltip-format": "알림",
+        "exec": "~/.config/waybar/scripts/notification_status.sh",
+        "on-click": "swaync-client -t -sw",
+        "return-type": "json",
+        "persistent": true
+    },
+    "clock": {
+        "format": "{:L%p %I:%M %B%e일 %A} ",
+        "interval": 1,
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "calendar": {
+            "format": {
+                "today": "<span color='#fAfBfC'><b>{}</b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "shift_down",
+            "on-click": "shift_up"
+        },
+        "locale": "ko_KR.UTF-8"
+    },
+    "network": {
+        "format-wifi": "",
+        "format-ethernet":"",
+        "format-disconnected": "",
+        "tooltip-format-disconnected": "Error",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+        "tooltip-format-ethernet": "{ifname} 🖧 ",
+        "on-click": "kitty nmtui"
+    },
+    "bluetooth": {
+        "format-on": "󰂯",
+        "format-off": "BT-off",
+        "format-disabled": "󰂲",
+        "format-connected-battery": "{device_battery_percentage}% 󰂯",
+        "format-alt": "{device_alias} 󰂯",
+        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\n{device_address}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\n{device_address}\n{device_battery_percentage}%",
+        "on-click-right": "blueman-manager"
+    }, 
+    "battery": {
+        "interval":30,
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 20
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": "󰂄  {capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-icons": [
+            "󰁻",
+        "󰁼",
+        "󰁾",
+        "󰂀",
+        "󰂂",
+        "󰁹"
+        ]
+    },
+    "custom/expand": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/endpoint":{
+        "format": "|",
+        "tooltip": false
+    },
+    "group/expand": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 600,
+            "transition-to-left": true,
+            "click-to-reveal": true
+        },
+        "modules": ["custom/expand", "custom/colorpicker","cpu","memory","temperature","bluetooth", "custom/docker", "custom/endpoint"]
+    },
+    "custom/colorpicker": {
+        "format": "",
+        "return-type": "json",
+        "interval": "once",
+        "exec": "~/.config/waybar/scripts/colorpicker.sh -j",
+        "on-click": "~/.config/waybar/scripts/colorpicker.sh",
+        "signal": 1
+    },
+    "cpu": {
+        "format": "󰻠",
+        "tooltip": true
+    },
+    "memory": {
+        "format": ""
+    },
+    "temperature": {
+        "critical-threshold": 80,
+        "format": ""
+    },
+    "tray": {
+        "icon-size": 14,
+        "spacing": 8
+    },
+    "pulseaudio": {
+        "format":  "{icon}  {volume}% ",
+        "format-muted": "",
+        "format-icons": {
+            "default": ["", "", ""]
+        },
+        "spacing": 10,
+        "on-click": "pavucontrol"
+    },
+    "custom/vpn": {
+        "format":  " ",
+        "exec": "~/.config/waybar/scripts/vpn_manager.sh status",
+        "return-type": "json",
+        "interval": 5,
+        "tooltip": true,
+        "on-click": "bash -c '~/.config/waybar/scripts/vpn_manager.sh list | jq -r \".items[].name\" | wofi --dmenu | xargs -r ~/.config/waybar/scripts/vpn_manager.sh toggle'",
+        "on-click-right": "kitty nmtui connect"
+    },
+    "custom/docker": {
+        "format": "󰡨 ",
+        "exec": "~/.config/waybar/scripts/docker_manager.sh status",
+        "return-type": "json",
+        "interval": 10,
+        "spacing": 10,
+        "tooltip": true,
+        "on-click": "bash -c '~/.config/waybar/scripts/docker_manager.sh list | jq -r \".items[].name\" | wofi --dmenu | xargs -r -I{} ~/.config/waybar/scripts/docker_manager.sh toggle {}'",
+        "on-click-right": "kitty --hold docker ps"
+    }
+}
