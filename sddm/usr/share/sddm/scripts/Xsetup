@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# Force internal display as primary
+xrandr --output eDP-1 --auto --primary
+
+# Optional: only enable external if connected
+xrandr --output HDMI-1 --auto --right-of eDP-1 || true
