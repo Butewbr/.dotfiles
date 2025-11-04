@@ -12,7 +12,7 @@ echo ">>> Installing SDDM configuration and theme..."
 SDDM_CONF_SRC="$DOTFILES_DIR/sddm/etc/sddm.conf"
 SDDM_CONF_TARGET="/etc/sddm.conf"
 
-SDDM_SCRIPT_SRC="$DOTFILES_DIR/sddm/usr/share/sddm/scripts"
+SDDM_SCRIPT_SRC="$DOTFILES_DIR/sddm/usr/share/sddm/scripts/Xsetup"
 SDDM_SCRIPT_TARGET="/usr/share/sddm/scripts"
 
 SDDM_THEME_NAME="Sugar-Candy"
@@ -34,7 +34,7 @@ fi
 # --- Install Xsetup ---
 if [ -d "$SDDM_SCRIPT_SRC" ]; then
     echo "Copying scripts $SDDM_SCRIPT_TARGET"
-    sudo cp -r "$SDDM_SCRIPT_SRC" "$SDDM_SCRIPT_TARGET"
+    sudo cp "$SDDM_SCRIPT_SRC" "$SDDM_SCRIPT_TARGET"
 else
     echo "Warning: $SDDM_SCRIPT_SRC not found!"
 fi
