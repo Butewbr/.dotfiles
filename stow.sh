@@ -32,7 +32,7 @@ else
 fi
 
 # --- Install Xsetup ---
-if [ -d "$SDDM_SCRIPT_SRC" ]; then
+if [ -f "$SDDM_SCRIPT_SRC" ]; then
     echo "Copying scripts $SDDM_SCRIPT_TARGET"
     sudo cp "$SDDM_SCRIPT_SRC" "$SDDM_SCRIPT_TARGET"
 else
