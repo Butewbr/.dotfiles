@@ -2,7 +2,7 @@
 @import "mocha.css"; 
 
 * {
-    font-size:15px;
+    font-size:16px;
     font-family: "MaruBuri", "CodeNewRoman Nerd Font Propo";
 }
 
@@ -38,8 +38,8 @@ window#waybar.visible {
     background: alpha(rgba(255,255,255, .05),.1);
 }
 
-tooltip {
-    background:@background;
+#tooltip {
+    background: alpha(rgba(255,255,255, .05),.1);
     color: @color7;
 }
 
@@ -115,7 +115,7 @@ tooltip {
     padding: 0px 10px;
     transition: all .3s ease-in-out;
     color:@color7;
-    font-size: 14px;
+    font-size: 16px;
 
 }
 #battery{

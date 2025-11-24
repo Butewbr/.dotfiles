@@ -4,9 +4,9 @@
     "mode": "hide",
     "position": "top",
     "reload_style_on_change": true,
-    "modules-left": ["custom/notification", "tray", "clock"],
-    "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["group/expand","custom/vpn","network","pulseaudio", "battery"],
+    "modules-left": ["battery", "pulseaudio", "custom/vpn","network","hyprland/workspaces"],
+    "modules-center": ["wlr/taskbar"],
+    "modules-right": ["tray", "clock", "custom/notification"],
     "hyprland/workspaces": {
         "format": "{icon}",
         "format-icons": {
@@ -17,6 +17,14 @@
         "persistent-workspaces": {
             "*": [ 1,2,3,4,5 ]
         }
+    },
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 24,
+        "icon-theme": "Dracula",
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "close"
     },
     "custom/notification": {
         "tooltip-format": "알림",
@@ -47,7 +55,7 @@
         "tooltip-format-disconnected": "Error",
         "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
         "tooltip-format-ethernet": "{ifname} 🖧 ",
-        "on-click": "kitty nmtui"
+        "on-click": "kitty nmtui connect"
     },
     "bluetooth": {
         "format-on": "󰂯",
@@ -82,7 +90,7 @@
         ]
     },
     "custom/expand": {
-        "format": "",
+        "format": ">",
         "tooltip": false
     },
     "custom/endpoint":{
@@ -118,14 +126,14 @@
         "format": ""
     },
     "tray": {
-        "icon-size": 14,
+        "icon-size": 17,
         "spacing": 8
     },
     "pulseaudio": {
         "format":  "{icon}  {volume}% ",
-        "format-muted": "",
+        "format-muted": " ",
         "format-icons": {
-            "default": ["", "", ""]
+            "default": [" ", " ", " "]
         },
         "spacing": 10,
         "on-click": "pavucontrol"
@@ -137,7 +145,7 @@
         "interval": 5,
         "tooltip": true,
         "on-click": "bash -c '~/.config/waybar/scripts/vpn_manager.sh list | jq -r \".items[].name\" | wofi --dmenu | xargs -r ~/.config/waybar/scripts/vpn_manager.sh toggle'",
-        "on-click-right": "kitty nmtui connect"
+        "on-click-right": "nm-connection-editor"
     },
     "custom/docker": {
         "format": "󰡨 ",
