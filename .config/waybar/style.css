@@ -195,3 +195,7 @@ window#waybar.visible {
 #custom-vpn.inactive {
     color: white; /* Reddish color for inactive VPN */
 }
+
+#taskbar button.active {
+    background: rgba(255, 255, 255, .25);
+}

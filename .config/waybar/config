@@ -24,7 +24,16 @@
         "icon-theme": "Dracula",
         "tooltip-format": "{title}",
         "on-click": "activate",
-        "on-click-middle": "close"
+        "on-click-middle": "close",
+        "all-outputs": true,
+        "window-rewrite": {
+            "title<.*youtube.*>": "",
+            "class<firefox>": "",
+            "class<firefox> title<.*github.*>": "",
+            "kitty": "",
+            "code": "󰨞",
+            "title<.* - (.*) - VSCodium>": "codium $1"
+        }
     },
     "custom/notification": {
         "tooltip-format": "알림",
@@ -126,7 +135,7 @@
         "format": ""
     },
     "tray": {
-        "icon-size": 17,
+        "icon-size": 16,
         "spacing": 8
     },
     "pulseaudio": {
