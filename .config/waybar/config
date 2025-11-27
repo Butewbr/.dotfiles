@@ -25,15 +25,7 @@
         "tooltip-format": "{title}",
         "on-click": "activate",
         "on-click-middle": "close",
-        "all-outputs": true,
-        "window-rewrite": {
-            "title<.*youtube.*>": "",
-            "class<firefox>": "",
-            "class<firefox> title<.*github.*>": "",
-            "kitty": "",
-            "code": "󰨞",
-            "title<.* - (.*) - VSCodium>": "codium $1"
-        }
+        "all-outputs": true
     },
     "custom/notification": {
         "tooltip-format": "알림",
