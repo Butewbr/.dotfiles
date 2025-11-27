@@ -6,7 +6,7 @@
     "reload_style_on_change": true,
     "modules-left": ["battery", "pulseaudio", "custom/vpn","network","hyprland/workspaces"],
     "modules-center": ["wlr/taskbar"],
-    "modules-right": ["tray", "clock", "custom/notification"],
+    "modules-right": ["group/expand", "clock", "custom/notification"],
     "hyprland/workspaces": {
         "format": "{icon}",
         "format-icons": {
@@ -91,7 +91,7 @@
         ]
     },
     "custom/expand": {
-        "format": ">",
+        "format": "",
         "tooltip": false
     },
     "custom/endpoint":{
@@ -101,11 +101,11 @@
     "group/expand": {
         "orientation": "horizontal",
         "drawer": {
-            "transition-duration": 600,
-            "transition-to-left": true,
+            "transition-duration": 300,
+            "transition-to-right": true,
             "click-to-reveal": true
         },
-        "modules": ["custom/expand", "custom/colorpicker","cpu","memory","temperature","bluetooth", "custom/docker", "custom/endpoint"]
+        "modules": ["custom/expand", "tray"]
     },
     "custom/colorpicker": {
         "format": "",
@@ -128,7 +128,11 @@
     },
     "tray": {
         "icon-size": 16,
-        "spacing": 8
+        "spacing": 8,
+        "icons": {
+            "blueman": "󰂯",
+            "bluetooth": "󰂯"
+        }
     },
     "pulseaudio": {
         "format":  "{icon}  {volume}% ",
