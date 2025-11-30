@@ -36,3 +36,18 @@ Run the script:
 ```bash
 ./stow.sh
 ```
+
+
+## Dual Monitor problems - Hyprland + Integrated Graphics + Nvidia
+
+Load modules from both GPUs on `/etc/mkinitcpio.conf`:
+
+```conf
+MODULES=(i915 btrfs nvidia nvidia_modeset nvidia_uvm nvidia_drm)
+```
+
+And add the `env` to use both GPUs on `hyprland.conf`:
+
+```conf
+env = AQ_DRM_DEVICES,/dev/dri/card0:/dev/dri/card1
+```
