@@ -11,32 +11,51 @@ window#waybar{
 
     transition: opacity 0.3s ease-in-out; /* Animates opacity over 0.3 seconds with an ease-in-out curve */
     opacity: 1; /* Start invisible */
-}
+    background: transparent;
+    background-color: transparent; /* This is crucial for click-through */
+    transition-property: background-color;
+    transition-duration: .5s;
+}    
 
 window#waybar.visible {
     opacity: 1;
 }
 
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+/* Combined styling for the islands 
+   We use rgba(white, 0.1) to replace your old alpha logic
+*/
+.modules-left, .modules-center, .modules-right {
+    background-color: rgba(255, 255, 255, 0.05); 
+    padding: 8px;
+    border-radius: 10px;
+    
+    /* Optional: Adds a slight border to define the 'glossy' edge */
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+}
+
 .modules-left {
-    padding:8px;
-    margin: 12 0 12 10;
-    border-radius:10px;
-    background: alpha(rgba(255,255,255, .05),.1);
+    margin: 12px 0 12px 10px;
 }
 
 .modules-center {
-    padding:8px;
-    margin: 12 0 12 0;
-    border-radius:10px;
-    background: alpha(rgba(255,255,255, .05),.1);
+    margin: 12px 0;
 }
 
 .modules-right {
-    padding:8px;
-    margin: 12 10 12 0;
-    border-radius:10px;
-    background: alpha(rgba(255,255,255, .05),.1);
+    margin: 12px 10px 12px 0;
 }
+
+#tooltip {
+    background: rgba(0, 0, 0, 0.8); /* Fixed tooltip background */
+    color: @color7;
+    border-radius: 10px;
+}
+
+/* ... Keep the rest of your specific module styling below ... */
 
 #tooltip {
     background: alpha(rgba(255,255,255, .05),.1);
