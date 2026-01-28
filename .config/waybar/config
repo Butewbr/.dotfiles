@@ -4,9 +4,9 @@
     "mode": "hide",
     "position": "top",
     "reload_style_on_change": true,
-    "modules-left": ["battery", "pulseaudio", "custom/vpn","network","hyprland/workspaces"],
+    "modules-left": ["battery", "pulseaudio", "custom/spotify", "hyprland/workspaces"],
     "modules-center": ["wlr/taskbar"],
-    "modules-right": ["group/expand", "clock", "custom/notification"],
+    "modules-right": ["group/expand", "clock", "custom/vpn","network", "custom/notification"],
     "hyprland/workspaces": {
         "format": "{icon}",
         "format-icons": {
@@ -161,5 +161,13 @@
         "tooltip": true,
         "on-click": "bash -c '~/.config/waybar/scripts/docker_manager.sh list | jq -r \".items[].name\" | wofi --dmenu | xargs -r -I{} ~/.config/waybar/scripts/docker_manager.sh toggle {}'",
         "on-click-right": "kitty --hold docker ps"
+    },
+    "custom/spotify": {
+        "format": " {text}",
+        "max-length": 40,
+        "interval": 30,
+        "exec": "$HOME/.config/waybar/scrips/spotify.sh 2> /dev/null",
+        "exec-if": "pgrep spotify",
+        "return-type": "json"
     }
 }
