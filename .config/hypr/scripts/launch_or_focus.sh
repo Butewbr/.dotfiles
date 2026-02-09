@@ -22,6 +22,8 @@ window_id=$(hyprctl clients -j | jq -r --arg CLASS "$window_class" --arg IGNORE 
 
 if [ -n "$window_id" ]; then
     hyprctl dispatch focuswindow address:"$window_id"
+    echo "mousemove 1 1" | dotoolc
+    echo "mousemove -1 -1" | dotoolc
 else
     eval "$command_to_launch" & 
 fi
