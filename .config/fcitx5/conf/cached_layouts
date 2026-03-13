@@ -54,12 +54,12 @@ Language=uk
 Label="ua (typewriter)"
 
 [keyboard-ua-winkeys]
-Description="키보드 - 우크라이나어 - 우크라이나어 (윈도우키)"
+Description="키보드 - 우크라이나어 - 우크라이나어 (윈도우)"
 Language=uk
 Label="ua (winkeys)"
 
 [keyboard-ua-winkeysenhanced]
-Description="키보드 - 우크라이나어 - Ukrainian (Windows Enhanced)"
+Description="키보드 - 우크라이나어 - 우크라이나어 (윈도우 강화형)"
 Language=uk
 Label="ua (winkeysenhanced)"
 
@@ -99,22 +99,22 @@ Language=uk
 Label="ua (sun_type6)"
 
 [keyboard-th]
-Description="키보드 - 타이어"
+Description="키보드 - 태국어"
 Language=th
 Label=th
 
 [keyboard-th-tis]
-Description="키보드 - 타이어 - 타이어 (TIS-820.2538)"
+Description="키보드 - 태국어 - 태국어 (TIS-820.2538)"
 Language=th
 Label="th (tis)"
 
 [keyboard-th-pat]
-Description="키보드 - 타이어 - 타이어 (Pattachote)"
+Description="키보드 - 태국어 - 태국어 (파타초트)"
 Language=th
 Label="th (pat)"
 
 [keyboard-th-mnc]
-Description="키보드 - 타이어 - Thai (Manoonchai)"
+Description="키보드 - 태국어 - 태국어 (마눈차이)"
 Language=th
 Label="th (mnc)"
 
@@ -543,6 +543,11 @@ Description="키보드 - 폴란드어 - 폴란드어 (왼손잡이)"
 Language=pl
 Label="pl (lefty)"
 
+[keyboard-pl-slaviature]
+Description="키보드 - 폴란드어 - Polish (Slavistic Phonetic Alphabet)"
+Language=pl
+Label="pl (slaviature)"
+
 [keyboard-trans]
 Description="키보드 - 국제 음성 표기 알파벳"
 Language=
@@ -684,7 +689,7 @@ Language=got
 Label=xx
 
 [keyboard-ancient-got]
-Description="키보드 - 고대 - 고딕"
+Description="키보드 - 고대 - 고트어"
 Language=got
 Label="ancient (got)"
 
@@ -699,7 +704,7 @@ Language=ae
 Label="ancient (ave)"
 
 [keyboard-ancient-got-alt]
-Description="키보드 - 고대 - Gothic (Alternative)"
+Description="키보드 - 고대 - 고트어 (다른 버전)"
 Language=got
 Label="ancient (got-alt)"
 
@@ -1054,7 +1059,7 @@ Language=ur
 Label="pk (urd-nla)"
 
 [keyboard-pk-pak_urdu_phonetic]
-Description="키보드 - 우르두어 (파키스탄) - Urdu (Pak Urdu Phonetic)"
+Description="키보드 - 우르두어 (파키스탄) - 우르두어 (파키스탄 우르두 음성 표기)"
 Language=ur
 Label="pk (pak_urdu_phonetic)"
 
@@ -2054,12 +2059,12 @@ Language=en
 Label="us (altgr-intl)"
 
 [keyboard-us-mac]
-Description="키보드 - 영어 (미국) - English (Macintosh, ABC, ANSI)"
+Description="키보드 - 영어 (미국) - 영어 (매킨토시, ABC, ANSI)"
 Language=en
 Label="us (mac)"
 
 [keyboard-us-mac-iso]
-Description="키보드 - 영어 (미국) - English (Macintosh, ABC, ISO)"
+Description="키보드 - 영어 (미국) - 영어 (매킨토시, ABC, ISO)"
 Language=en
 Label="us (mac-iso)"
 
@@ -2129,12 +2134,12 @@ Language=en
 Label="us (dvp)"
 
 [keyboard-us-dvorak-mac]
-Description="키보드 - 영어 (미국) - English (Dvorak, Macintosh, ANSI)"
+Description="키보드 - 영어 (미국) - 영어 (드보락, 매킨토시, ANSI)"
 Language=en
 Label="us (dvorak-mac)"
 
 [keyboard-us-dvorak-mac-iso]
-Description="키보드 - 영어 (미국) - English (Dvorak, Macintosh, ISO)"
+Description="키보드 - 영어 (미국) - 영어 (드보락, 매킨토시, ISO)"
 Language=en
 Label="us (dvorak-mac-iso)"
 
