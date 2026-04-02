@@ -27,7 +27,7 @@ else
 fi
 
 # 4. Apply Wallpaper (Wait for generation to finish first)
-swww img "$FULL_PATH" --transition-type grow --transition-pos 0.9,0.9 --transition-step 90
+awww img "$FULL_PATH" --transition-type grow --transition-pos 0.9,0.9 --transition-step 90
 
 killall swaync
 swaync &
@@ -47,3 +47,7 @@ hyprctl reload
 
 # Update Pywalfox (Zen)
 pywalfox update
+
+wal-telegram
+
+killall -SIGUSR1 telegram
