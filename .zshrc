@@ -111,4 +111,4 @@ eval "$(starship init zsh)"
 alias ls='ls -a --color=auto'
 export PATH="$HOME/.local/opt/zen:$PATH"
 
-export MANPAGER='nvim +Man!'
+export MANPAGER='nvim +Man!'export PATH="$HOME/.local/bin:$PATH"

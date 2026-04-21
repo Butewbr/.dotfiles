@@ -3,6 +3,8 @@
     "icp": true,
     "mode": "hide",
     "position": "top",
+    "exclusive": false,
+    "passthrough": true,
     "reload_style_on_change": true,
     "modules-left": ["battery", "pulseaudio", "custom/spotify", "hyprland/workspaces"],
     "modules-center": ["wlr/taskbar"],
